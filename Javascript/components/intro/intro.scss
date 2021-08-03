@@ -1,0 +1,31 @@
+@import "../../global.scss";
+
+.intro
+{
+    background-color: $mainColour;
+
+    display:flex;
+
+    .left
+    {
+        background-color: lightcoral;
+        flex: 0.5;
+
+        .imgContainer
+        {
+            width: 700px;
+            height: 700px;
+
+            .img
+            {
+                width: 100%;
+            }
+        }
+    }
+
+    .right
+    {
+        background-color: tomato;
+        flex: 0.5;
+    }
+}

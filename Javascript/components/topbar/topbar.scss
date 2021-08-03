@@ -1,0 +1,101 @@
+@import "../../global.scss";
+
+.topbar
+{
+    height: 70px;
+    width: 100%;
+    background-color: $accentColour;
+
+    position: fixed;
+    top: 0;
+    z-index: 3;
+
+    transition: all 1s ease;
+
+    .wrapper
+    {
+        padding: 15px 30px;
+        display: flex;
+        align-items: center;
+        
+        /*evenly moves the content within wrapper 
+        from left to right based on how many elements*/
+        justify-content: space-between;
+
+        //Lefthand side of the navigation bar
+        .left
+        {
+            .logo
+            {
+                font-size: 30px;
+                font-weight: 700;
+                text-decoration: none; 
+                color:$mainColour;
+            }    
+        }
+
+        //Righthand side of the navigation bar 
+        .right
+        {
+            .menuButton
+            {  
+                width: 32px;
+                height: 25px;
+                display: flex;
+                
+                // separating the 3 lines for the button visual evenly within a vertical direction
+                flex-direction: column;
+                justify-content: space-between;
+
+                cursor: pointer;
+
+                span
+                {
+                    width: 100%;
+                    height: 3px;
+                    background-color: $mainColour;
+                    transform-origin: left;
+
+                    transition:  all 2s ease;
+                }
+            }
+        }
+        
+    }
+
+    //Checks for when the menu button has been pressed
+    &.active
+    {
+        background-color: $secondaryColour;
+
+        .left
+        {
+            .logo
+            {
+                color: $accentColour;
+            }
+        }
+       
+
+        .menuButton
+        {
+            span
+            {
+                &:first-child
+                {
+                    background-color: $accentColour;
+                    transform: rotate(45deg);
+                }
+                &:nth-child(2)
+                {
+                    opacity: 0;
+                }
+                &:last-child
+                {
+                    transform: rotate(-45deg);
+                    background-color: $accentColour;
+                }
+            }
+        }
+    }
+}
